@@ -23,24 +23,30 @@ listBox.pack(padx = 15, pady = 15)
 label = tk.Label(ventana, text = '', bg = "black", fg = "yellow")
 label.pack(pady = 15)
 
+#imagen_iconos
+play_img = tk.PhotoImage(file= "Play.png")
+back_img = tk.PhotoImage(file= "Back.png")
+next_img = tk.PhotoImage(file= "Next.png")
+paus_img = tk.PhotoImage(file = "Pause.png")
+
 #botones
 
 top = tk.Frame(ventana, bg = "black")
 top.pack(padx = 10, pady = 5, anchor = 'center') #anchor para poner todos los botones en hz
 
-prevButton = tk.Button(ventana, text = "Anterior")
+prevButton = tk.Button(ventana, text = "", image= back_img)
 prevButton.pack(pady = 15, in_ = top, side = 'left')
 
-stopButton = tk.Button(ventana, text = "Play")
+stopButton = tk.Button(ventana, text = "", image= play_img)
 stopButton.pack(pady = 15, in_ = top, side = "left")
 
-stopButton = tk.Button(ventana, text = "Stop")
+stopButton = tk.Button(ventana, text = "", image= paus_img)
 stopButton.pack(pady = 15, in_ = top, side = "left")
 
-stopButton = tk.Button(ventana, text = "Next")
+stopButton = tk.Button(ventana, text = "", image= next_img)
 stopButton.pack(pady = 15, in_ = top, side = "left")
 
-#filtrosfiles
+#filtrosfiles + poner musica en lista
 
 for root, dirs, files in os.walk(mpath):
     for filename in fnmatch.filter(files, pattern):
