@@ -2,18 +2,25 @@ from tkinter import *
 import tkinter as tk
 from tkinter import filedialog
 import os
-import pygame
+from pygame import mixer
 import fnmatch
 
 #path a carpeta + file filter
 mpath = "C:/Users/jonsa/Desktop/x"
 pattern = "*.mp3"
 
+mixer.init()
+
 #crear ventana
 ventana = tk.Tk()
 ventana.title("ReproMusic")
 ventana.geometry("300x400")
 ventana.config(bg = 'black')
+
+def select():
+    label.config(text = listBox.get("anchor"))
+    mixer.music.load(mpath + "\\" + listBox.get("anchor"))
+    mixer.music.play()
 
 #listarmusica
 
@@ -37,14 +44,14 @@ top.pack(padx = 10, pady = 5, anchor = 'center') #anchor para poner todos los bo
 prevButton = tk.Button(ventana, text = "", image= back_img)
 prevButton.pack(pady = 15, in_ = top, side = 'left')
 
-stopButton = tk.Button(ventana, text = "", image= play_img)
-stopButton.pack(pady = 15, in_ = top, side = "left")
+playButton = tk.Button(ventana, text = "", image= play_img, command= select)
+playButton.pack(pady = 15, in_ = top, side = "left")
 
 stopButton = tk.Button(ventana, text = "", image= paus_img)
 stopButton.pack(pady = 15, in_ = top, side = "left")
 
-stopButton = tk.Button(ventana, text = "", image= next_img)
-stopButton.pack(pady = 15, in_ = top, side = "left")
+nextButton = tk.Button(ventana, text = "", image= next_img)
+nextButton.pack(pady = 15, in_ = top, side = "left")
 
 #filtrosfiles + poner musica en lista
 
