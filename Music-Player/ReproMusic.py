@@ -5,10 +5,6 @@ import os
 from pygame import mixer
 import fnmatch
 
-#path a carpeta + file filter
-mpath = "C:/Users/jonsa/Desktop/x"
-pattern = "*.mp3"
-
 mixer.init()
 
 #crear ventana
@@ -16,6 +12,11 @@ ventana = tk.Tk()
 ventana.title("ReproMusic")
 ventana.geometry("300x400")
 ventana.config(bg = 'black')
+
+#path a carpeta + file filter
+mpath = filedialog.askdirectory()
+pattern = "*.mp3"
+
 
 #funcionalidad botones
 def select():
