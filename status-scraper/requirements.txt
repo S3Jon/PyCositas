@@ -1,0 +1,3 @@
+For Selenium to work you must have ChromeDriver added to your PATH
+
+https://sites.google.com/chromium.org/driver/downloads?authuser=0
