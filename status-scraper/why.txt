@@ -1,0 +1,5 @@
+>Why would I make a web scraper for this?
+To test myself
+
+>Why Selenium?
+With BS4 alone status would print "...", meaning it's dynamic therefore I need Selenium
